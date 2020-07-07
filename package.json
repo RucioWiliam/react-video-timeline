@@ -1,0 +1,69 @@
+{
+  "name": "educasteditor",
+  "version": "3.0.0",
+  "description": "Um video editor",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "webpack --mode production --progress",
+    "start": "webpack-dev-server --open  --compress --mode development",
+    "prestats": "webpack --profile --json > stats.json",
+    "stats": " webpack-bundle-analyzer stats.json dist",
+    "serve": "serve dist"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.3",
+    "@material-ui/icons": "^4.9.1",
+    "html-webpack-plugin": "3.2.0",
+    "moment": "^2.24.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-full-screen": "^0.2.4",
+    "react-hook-form": "^4.9.8",
+    "react-icons-kit": "^1.3.1",
+    "react-tabs": "^3.1.0",
+    "recompose": "^0.30.0",
+    "typeface-clear-sans": "0.0.44",
+    "video.js": "^7.7.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.1.0",
+    "html-webpack-plugin": "^4.0.0-beta.11",
+    "node-sass": "^4.13.1",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^8.0.2",
+    "serve": "^11.3.0",
+    "standard": "^14.3.1",
+    "style-loader": "^1.1.3",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguel16968/EditorV3.git"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "bugs": {
+    "url": "https://github.com/miguel16968/EditorV3/issues"
+  },
+  "homepage": "https://github.com/miguel16968/EditorV3#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

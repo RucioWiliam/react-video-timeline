@@ -1,0 +1,3 @@
+# react-educasteditor
+
+Miguel Rodrigues

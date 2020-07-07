@@ -1,0 +1,159 @@
+@import "../../assets/scss/custom-icons.scss";
+
+.multi__player {
+  .player__box {
+    min-width: 720px;
+    display: -webkit-flex;
+    display: flex;
+  }
+  &--fullscreen{
+
+    height: 100%;
+    .player__box{
+      // 50px is the height of controller
+      height: calc(100% - 50px);
+    }
+  }
+}
+
+.progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: #e9ecef;
+  border-radius: .25rem;
+  
+  .progress-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: #007bff;
+    transition: width .6s ease;
+  }
+}
+
+.player__box{
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  .player{
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    @media all and (max-width: 575px){
+      -webkit-flex-basis: 100%;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    > div{
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+      height: auto;
+      &:after{
+        display: block;
+        clear: both;
+        content: "";
+      }
+      &:before{
+        padding-top: 56.25%;
+        display: block;
+        clear: both;
+        content: "";
+      }
+      video{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    }
+  }
+}
+$CONTROL_BAR_BOTTOM: #231F20;
+.control {
+  &__bar {
+    &__top{
+      .progress{
+        border-radius: 0;
+        height: .35rem;
+        background: #f1f1f1;
+        cursor: pointer;
+        .progress-bar{
+          border-radius: 0;
+          background: #0980d0;
+        }
+      }
+    }
+    &__bottom{
+      background: $CONTROL_BAR_BOTTOM;
+      color: #fff;
+      padding: 10px 15px;
+      button{
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        color: #fff;
+        outline: none;
+        font-size: 18px;
+        &:hover,
+        &:active,
+        &:focus{
+          outline: none;
+          box-shadow: none;
+        }
+        &.btn-skip-time{
+          color: #696969;
+          &:hover,&:active,
+          &:focus{
+            color: #aaa;
+          }
+        }
+        &.btn-play,
+        &.btn-pause{
+          -webkit-transition: all 0.3s ease 0.03s;
+          transition: all 0.3s ease 0.03s;
+          &:hover,
+          &:active,
+          &:focus{
+            -webkit-transition: all 0.3s ease 0.03s;
+            transition: all 0.3s ease 0.03s;
+            color: #009dfd;
+          }
+        }
+      }
+    }
+  }
+}
+
+.player{
+  &__control{
+    min-width: 720px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    .control__center{
+      display: -webkit-flex;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

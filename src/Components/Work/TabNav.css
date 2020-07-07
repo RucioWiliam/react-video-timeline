@@ -1,0 +1,123 @@
+.tabs{
+  color: #fff;
+  background: #fff;
+  border-color:#333;
+  border-radius: 5px;
+}
+
+.react-tabs__tab {
+  
+  list-style: none;
+  margin: 1px;
+  background: #333;
+  
+  
+}
+.tab-nav-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+  background: #fff;
+  min-width: 720px;
+  Align: Top;
+  top: 10px;
+  left: 10px;
+  }
+
+      
+
+.react-tabs__tab-panel {
+  display: none;
+  
+  
+}
+.react-tabs__tab-panel--selected {
+  display: block;
+  
+}
+
+.span {
+  margin-left: 5em;
+}
+.p {
+
+position:relative;
+Font-Family: "Clear Sans";
+Font-Style: Regular;
+Font-Size: 14px;
+
+left:9.62px;
+top: 7px;
+
+padding-right: 20px;
+
+
+}
+
+.caixa {
+  
+  position:relative;
+  
+  background: #333;
+  width: 150px;
+  height: 35px;
+  display: row;
+  display: flex;
+    align-items: stretch;
+
+}
+
+/* Tabs Nav Hover Effect */
+ul li:hover {
+  color: #f69333;
+  cursor: pointer;
+}
+
+ul li:hover svg path {
+  fill: #f69333;
+}
+
+/* The Active Tab */
+.active {
+  border-bottom: 4px solid ;
+  
+}
+
+.tab-selected {
+  background: #0099ff;
+  
+}
+
+.tab-selected svg path {
+  fill: #fff;
+}
+
+/* Media  */
+@media (min-width: 900px) {
+  .mdScreen {
+    display: none;
+    background: #333;
+    
+  }
+  .lgScreen {
+    display: none;
+    color: #333;
+  }
+}
+
+@media (max-width: 900px) {
+  .lgScreen {
+    display: none;
+    background: #333;
+  }
+  .mdScreen {
+    display: block;
+    margin-bottom: 0.4rem;
+    background: #333;
+  }
+}
+

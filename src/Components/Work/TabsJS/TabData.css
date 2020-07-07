@@ -1,0 +1,156 @@
+@import url("http://allfont.net/allfont.css?fonts=clear-sans");
+  
+
+  form {
+    min-width: 720px;
+    
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px,2fr));
+    grid-gap: 55px;
+    margin: 0 auto ;
+    margin-left: 30px;
+  }
+  
+
+  
+  
+  textarea,
+  input {
+    
+    width: 100%;
+    background-color: #ECECEC;
+    color: #535353;
+    padding: 8px 15px;
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    border: none;
+    
+  }
+
+  label {
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 5px;
+    margin-bottom: 13px;
+    margin-top: 10px;
+    color: #000000;
+  }
+
+  button[type="submit"],
+  input[type="submit"] {
+  background: #2D98D5;
+  color: white;
+  right: 135px;
+  bottom: 29px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  width:100px;
+  height:35px;
+  
+  top: 0px;
+  left: 0px;
+  position: relative;
+	
+ 
+}
+/* Tabs Nav Hover Effect */
+.button[type="submit"]::before {
+	content:'';
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 0px;
+	background: rgba(255,255,255,0.3);
+	border-radius: 5px;
+	transition: all 2s ease;
+}
+
+.button[type="submit"] ul li:hover svg path {
+  fill: #f69333;
+}
+
+
+button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #c4c4c4;
+  color: black;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  
+}
+button[type="delete"] {
+  display: inline;
+  background: #c4c4c4;
+  color: #0000;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 20px;
+  justify-content:center;
+  top: 3px;
+  position:relative;
+  
+}
+ 
+.tag {
+  display: inline;
+  background: #ececec;
+  width: 82px;
+  height: 21px;
+  color: black;
+  font-size:12px;
+  line-height:16px;
+  font-style: normal;
+ 
+  border-radius: 20px;
+  
+  
+}
+
+.x{
+  position: relative;
+  width: 7px;
+  height: 18px;
+  font-size: 13px;
+  line-height: 15px;
+  right: 5px;
+  top: -3px;
+
+ 
+  font-style: normal;
+  font-weight: normal;
+}
+.tagstyle{
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 5px;
+ 
+ 
+}
+
+  .tenta{
+    position: relative;
+    display:inline;
+  }
+
+  
+
+  
