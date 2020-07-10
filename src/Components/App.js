@@ -36,10 +36,10 @@ class App extends PureComponent {
         <Header />
         <Grid>
           <div className="video__mode video__multi">
-            <MultiVideo videoOne={videoJsOptions} videoTwo={videoJsOptions}/>
+            <MultiVideo videoOne={videoJsOptions} videoTwo={videoJsOptions} />
           </div>
         </Grid>
-        <TabNav/>
+        <TabNav />
       </Provider>
     );
   }

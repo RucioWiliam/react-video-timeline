@@ -41,7 +41,7 @@ module.exports = {
     compress: true,
     inline: true,
     disableHostCheck: true,
-    port: '8080'    
+    port: '8000'    
   },
   plugins: [
     new HtmlWebpackPlugin({
