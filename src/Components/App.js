@@ -33,27 +33,13 @@ class App extends PureComponent {
     return (
       <Provider value={this.getContext()}>
         <CssBaseline />
-
         <Header />
-
-        <Grid container direction="row" justify="center" alignItems="center">
-          {/* <Video />
-
-          <Video /> */}
-
-
-
-          
-        </Grid>
-
         <Grid>
           <div className="video__mode video__multi">
             <MultiVideo videoOne={videoJsOptions} videoTwo={videoJsOptions}/>
-        </div>
+          </div>
         </Grid>
-
         <TabNav/>
-        
       </Provider>
     );
   }
