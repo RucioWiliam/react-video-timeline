@@ -25,21 +25,47 @@ const videoJsOptions = {
 };
 
 class App extends PureComponent {
+
+  constructor(props) {
+    super(props);
+    this.state={
+      currentTime: 0,
+      totalTime: 0,
+    }
+  }
+
   getContext = () => ({
     ...this.state
   });
 
+  setCurrentTime = (currentTime) => {
+    this.setState({
+      currentTime,
+    });
+    console.log(currentTime);
+  }
+
+  setTotalTime = (totalTime) => {
+    this.setState({
+      totalTime,
+    });
+    console.log(totalTime);
+  }
+
   render() {
+
+    const { currentTime, totalTime } = this.state;
+
     return (
       <Provider value={this.getContext()}>
         <CssBaseline />
         <Header />
         <Grid>
           <div className="video__mode video__multi">
-            <MultiVideo videoOne={videoJsOptions} videoTwo={videoJsOptions} />
+            <MultiVideo setTotalTime={this.setTotalTime} setCurrentTime={this.setCurrentTime} currentTime={currentTime} totalTime={totalTime} videoOne={videoJsOptions} videoTwo={videoJsOptions}/>
           </div>
         </Grid>
-        <TabNav />
+        <TabNav setCurrentTime={this.setCurrentTime} currentTime={currentTime} totalTime={totalTime} />
       </Provider>
     );
   }

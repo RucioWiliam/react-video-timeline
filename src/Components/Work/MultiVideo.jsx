@@ -28,17 +28,17 @@ const showPlayTime = (currentTime, totalTime) => {
 }
 
 class MultiVideo extends Component {
-  state = {
-    current_duration: 0,
-    total_duration: 0,
-    fullscreen_mode: false,
-    muted: false
-  }
 
   constructor (props) {
     super(props)
     this.playerOneRef = React.createRef()
     this.platerTwoRef = React.createRef()
+    this.state = {
+      current_duration: props.currentTime,
+      total_duration: props.totalTime,
+      fullscreen_mode: false,
+      muted: false
+    }
   }
 
   componentDidMount () {
@@ -53,17 +53,23 @@ class MultiVideo extends Component {
           current_duration: this.playerOne.currentTime(),
           total_duration: this.playerOne.duration()
         })
+
+        const { setTotalTime, setCurrentTime } = this.props;
+        setTotalTime(this.playerOne.duration());
+        setCurrentTime(this.playerOne.currentTime());
       })
       this.playerOne.on('timeupdate', () => {
         console.log('timeupdate')
         this.setState({
           current_duration: this.playerOne.currentTime(),
           total_duration: this.playerOne.duration()
-        })
-      })
+        });
+        const { setCurrentTime } = this.props;
+        setCurrentTime(this.playerOne.currentTime());
+      });
       this.playerOne.on('playing', () => {
         console.log('playing')
-      })
+      });
     })
     window.playTwo = this.playerTwo = videojs(playerTwoElement, videoTwo, () => {
 
