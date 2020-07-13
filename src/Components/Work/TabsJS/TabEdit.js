@@ -1,87 +1,245 @@
 
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 
-import { useForm } from 'react-hook-form';
-
-
-import { priceTags } from 'react-icons-kit/icomoon/priceTags';
 import './TabData.css'
 
 export default function TabEdit() {
-  const { register, handleSubmit, errors } = useForm();
-  const [fields, setFields] = useState([]);
-  const onSubmit = data => console.log(data);
-  console.log(errors);
-
-
-
-  const addField = () =>
-    setFields(fields => {
-      // DON'T USE [...spread] to clone the array because it will bring back deleted elements!
-      const outputState = fields.slice(0);
-      outputState.push('');
-      return outputState;
-    });
-
-  const removeField = idx =>
-    setFields(fields => {
-      const outputState = fields.slice(0);
-      // `delete` removes the element while preserving the indexes.
-      delete outputState[idx];
-      return outputState;
-    });
-
-
-
   return (
-
     <div className="container">
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="areaA">
-          <label>Titulo </label>
-          <input type="text" placeholder="Educast- grava, edita e publica " name="Titulo" ref={register({ required: true, min: 5, maxLength: 40 })} />
-          <label>Subtitulo </label>
-          <input type="text" placeholder="Grave as suas aulas com o Educast " name="Subtitulo" ref={register({ required: true, max: 40, min: 5, maxLength: 100 })} />
-          <label>Local </label>
-          <input type="text" placeholder="Laboratório Nacional de Quarentena " name="Local" ref={register({ required: true, maxLength: 40 })} />
-          <label>Data </label>
-          <input type="datetime" placeholder="13 de Agosto " name="Data" ref={register({ required: true })} />
-
-        </div>
-
-        <div className="areaB">
-          <label>Descrição</label>
-          <textarea name="Descrição" placeholder="Descrição" ref={register({ required: true, min: 20, maxLength: 400 })} />
-
-          <label>Tags</label>
-          <button type="button" onClick={addField}>
-            + Add tag
-              </button>
-
-          <div className="tagstyle">
-            {fields.map((field, idx) => (
-              <div key={idx}>
-                <div className="tenta">
-                  <input type="text" className="tag" placeholder="Tags" name="Tag" ref={register({ required: false, min: 1, maxLength: 20 })} name={`fieldName[${idx}]`} />
-                  <button type="delete" className="delete" onClick={() => removeField(idx)}>
-                    <label className="x">x</label>
-                  </button>
-                </div>
-              </div>
-
-
-            ))}
-
-          </div>
-        </div>
-        <button type="submit">Salvar </button>
-
-      </form>
+      <h1>Hello</h1>
     </div>
-
-
   );
-
 }
+
+
+// import { Component } from "react";
+// import * as React from "react";
+// import Timeline from "react-scenejs-timeline";
+// import Scene from "scenejs";
+// import { poly } from "shape-svg";
+// import { ref } from "framework-utils";
+
+// import './TabData.css'
+
+// export default class TabEdit extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       scene: new Scene(),
+//       timeline: new Timeline(),
+//     }
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <div id="main" className="page page1">
+//           <div className="container">
+//             <div className="logo">
+//               <div className="dash-line"></div>
+//               <div className="dash-line"></div>
+//               <div className="dash-line"></div>
+//               <div className="dash-line"></div>
+//               <div className="clapper">
+//                 <div className="background">
+//                   <div className="stick stick1">
+//                     <div className="rect rect1"></div>
+//                     <div className="rect rect2"></div>
+//                     <div className="rect rect3"></div>
+//                     <div className="rect rect4"></div>
+//                     <div className="rect rect5"></div>
+//                     <div className="rect rect6"></div>
+//                   </div>
+//                   <div className="stick stick1 shadow"></div>
+//                   <div className="stick stick2">
+//                     <div className="rect rect1"></div>
+//                     <div className="rect rect2"></div>
+//                     <div className="rect rect3"></div>
+//                     <div className="rect rect4"></div>
+//                     <div className="rect rect5"></div>
+//                     <div className="rect rect6"></div>
+//                   </div>
+//                   <div className="stick stick2 shadow"></div>
+//                   <div className="bottom"></div>
+//                   <div className="bottom shadow"></div>
+//                 </div>
+//                 <div className="play-circle"></div>
+//                 <div className="play-btn"></div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//         <Timeline
+//             ref={ref(this, "timeline")}
+//             scene={this.scene}
+//             style={{ maxHeight: "350px", position: "fixed", bottom: 0, left: 0, right: 0 }}
+//         />
+//       </div>
+//     );
+//   }
+//   componentDidMount() {
+//     (window).app = this;
+
+//     const playBtn = poly({
+//         width: 60,
+//         strokeWidth: 8,
+//         strokeLinejoin: "round",
+//         rotate: 90,
+//         origin: "50% 50%",
+//         left: 10,
+//         top: 15,
+//         fill: "#333", stroke: "#333",
+//     });
+
+//     // shadow
+//     poly({
+//         width: 60,
+//         strokeWidth: 8,
+//         strokeLinejoin: "round",
+//         rotate: 90,
+//         origin: "50% 50%",
+//         left: 20,
+//         top: 30,
+//         opacity: 0.2,
+//         fill: "#333", stroke: "#333",
+//     }, playBtn);
+
+//     // document.querySelector(".play-btn")!.appendChild(playBtn);
+//     this.state.scene.load(
+//     {
+//       ".play-btn": {
+//         0: {
+//           transform: "translate(-50%, -50%) scale(0)",
+//         },
+//         1: {
+//           transform: "scale(1)",
+//         },
+//         options: {
+//           delay: 0.6,
+//         },
+//       },
+//       ".play-circle": {
+//         0: {
+//           transform: "translate(-50%, -50%) scale(0)",
+//         },
+//         1: {
+//           transform: "scale(1)",
+//         },
+//         options: {
+//           delay: 0.3,
+//         },
+//       },
+//       ".background": {
+//         0: {
+//           transform: "translate(-50%, -50%) scale(0)",
+//         },
+//         1: {
+//           transform: "scale(1)",
+//         },
+//       },
+//       ".stick1 .rect": i => ({
+//         0: {
+//           transform: {
+//             scale: 0,
+//             skew: "15deg",
+//           },
+//         },
+//         0.7: {
+//           transform: {
+//             scale: 1,
+//           },
+//         },
+//         options: {
+//           delay: 1 + i % 6 * 0.1,
+//         },
+//       }),
+//       ".stick2 .rect": i => ({
+//         0: {
+//           transform: {
+//             scale: 0,
+//             skew: "-15deg",
+//           },
+//         },
+//         0.7: {
+//           transform: {
+//             scale: 1,
+//           },
+//         },
+//         options: {
+//           delay: 1.2 + i % 6 * 0.1,
+//         },
+//       }),
+//       ".stick1": {
+//         0: {
+//           transform: {
+//             rotate: "0deg",
+//           },
+//         },
+//         0.5: {
+//           transform: {
+//             rotate: "-20deg",
+//           },
+//         },
+//         1: {
+//           transform: {
+//             rotate: "0deg",
+//           },
+//         },
+//         1.5: {
+//           transform: {
+//             rotate: "-10deg",
+//           },
+//         },
+//         options: {
+//           delay: 2.2,
+//         },
+//       },
+//       ".logo": {
+//         0: {
+//           transform: "scale(1.2) translate(-50%, -50%) rotate(0deg)",
+//         },
+//         0.5: {
+//           transform: "rotate(-15deg)",
+//         },
+//         1: {
+//           transform: "rotate(0deg)",
+//         },
+//         1.5: {
+//           transform: "rotate(-10deg)",
+//         },
+//         options: {
+//           delay: 2.2,
+//         },
+//       },
+//       ".clapper": {
+//         1.5: {
+//           transform: "translate(-50%, -50%) translateY(30px) scale(1)",
+//         },
+//         2.5: {
+//           transform: "scale(0.7)",
+//         },
+//         options: {
+//           delay: 2.2,
+//         },
+//       },
+//       ".dash-line": i => ({
+//         0: {
+//           transform: `rotate(${i * 90}deg) translate2(0px, -100%)`,
+//         },
+//         1: {
+//           transform: "translate2(0px, 0%)",
+//         },
+//         options: {
+//           delay: 3.6 + (i % 2 + i * 0.5) * 0.1,
+//         },
+//       }),
+//     },
+//     {
+//       easing: "ease-in-out",
+//       iterationCount: 1,
+//       selector: true,
+//     }
+//     );
+//     this.state.timeline.update(true);
+//   }
+// }

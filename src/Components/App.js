@@ -42,14 +42,12 @@ class App extends PureComponent {
     this.setState({
       currentTime,
     });
-    console.log(currentTime);
   }
 
   setTotalTime = (totalTime) => {
     this.setState({
       totalTime,
     });
-    console.log(totalTime);
   }
 
   render() {
